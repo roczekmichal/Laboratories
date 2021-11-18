@@ -82,5 +82,43 @@ int main()
     //...
     
     cout << "\nANSWER:\n-1 0 1 8 8 8 2 3 4 5\n";
-return 0;
+
+
+
+
+
+    /*====================================== TASK 3 =====================================================*/
+    cout << "\n\n\t\t================== TASK 3 ==================\n";
+    
+    vector<string> my_vec = {"one", "two"};
+    /* 3.a) Use copy algorithm and stream iterators, to read words from the user (cin) into the vector my_vec.
+    Use back_inserter (3rd argument). To stop reading from cin use ctrl+z (some systems: ctrl+d) */
+    vector<string> col((istream_iterator<string>(cin)),
+    istream_iterator<string>());
+  
+    std::back_insert_iterator< std::vector<string> > back_it (my_vec);
+    std::copy (col.begin(),col.end(),back_it);
+
+    cout << "\na):\n";
+    for (std::vector<string>::iterator it=my_vec.begin(); it != my_vec.end(); ++it)
+    std::cout << ' ' << *it;
+    
+    //...
+
+
+     /* 3.b) Sort the vector  */
+     sort(my_vec.begin(), my_vec.end());
+
+    cout << "\nb):\n";
+    for (std::vector<string>::iterator it=my_vec.begin(); it != my_vec.end(); ++it)
+    std::cout << ' ' << *it;    
+        //...
+
+
+    /* 3.c) Copy sorted vector my_vec to the standard output - use ostream_iterator, putting "***" between strings;*/
+    cout << "\nc):\n";
+    ostream_iterator < string > out_it(cout, " *** "); 
+    copy(my_vec.begin(), my_vec.end(), out_it);
+    //...
+    return 0;
 }
