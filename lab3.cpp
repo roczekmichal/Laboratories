@@ -82,5 +82,6 @@ int main()
     //...
     
     cout << "\nANSWER:\n-1 0 1 8 8 8 2 3 4 5\n";
+return 0;
 
 }
