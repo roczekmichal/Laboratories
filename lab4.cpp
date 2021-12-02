@@ -174,21 +174,45 @@ int main() {
     //  - unordered_multimap
     // In case of *map containers (last four containers) use number from num array as key and its index in num array as value
     
-    // ...
     
+    vector<int> v(num, num+num_size);
+    set<int> s(num, num+num_size);
+    multiset<int> ms(num, num+num_size);
+    unordered_set<int> us(num,num+num_size);
+    unordered_multiset<int> ums(num,num+num_size);
+    map<int,int> m;
+    for(int i = 0; i < num_size; i++)
+    {
+        m.insert(std::pair<int,int>(num[i],i));
+    }
     // 1.b) Display all elements from each container
     cout << endl << "Content of vector:"<< endl;
-    // ...
+    for(int i : v)
+    {
+        cout << i << " ";
+    }
     cout << endl << "Content of set:"<< endl;
-    // ...
+    for(int i : s)
+    {
+        cout << i << " ";
+    }
     cout << endl << "Content of multiset:"<< endl;
-    // ...
+    for(int i : ms)
+    {
+        cout << i << " ";
+    }
     cout << endl << "Content of unordered_set:"<< endl;
-    // ...
+    for(int i : us)
+    {
+        cout << i << " ";
+    }
     cout << endl << "Content of unordered_multiset:"<< endl;
-    // ...
+    for(int i : ums)
+    {
+        cout << i << " ";
+    }
     cout << endl << "Content of map:"<< endl;
-    // ...
+
     cout << endl << "Content of multimap:"<< endl;
     // ...
     cout << endl << "Content of unordered_map:"<< endl;
@@ -203,23 +227,29 @@ int main() {
     // - key is a name of a country
     // - value is the name of capital of that country
     
-    // ...
+    map<string, string> countries;
     
     // 2.b) Insert 3 key-value elements into the map using insert method (including {"Poland", "Warsaw"} pair)
-    // ...
-    
+    countries.insert("Poland","Warsaw");
+    countries.insert("England","London");
+    countries.insert("France","Paris");
     // 2.c) Insert 3 key-value elements into the map using operator[]
     // ...
-    
+    countries["Spain"] = "Madrid";
+    countries["Italy"] = "Rome";
+    countries["Germany"] = "Berlin";
     // 2.d) Display all elements of the map (country-capital pairs)
     cout << "Country-Capital map:"<< endl;
     // ...
-    
+   for( auto & el : countries)
+   {
+       cout << el.first << ":" << el.second << " ";
+   }
     // 2.e) Change the capital of Poland to "Cracow".
-    // ...
+    countries["Poland"] = "Cracow";
     
     // 2.f) Use operator[] to display capital of Poland and capital of some country that is not in the map.
-    // ...
+    cout << countries["Poland"] << countries["Russia"];
     
     // 2.g) Display all elements of the map again (country-capital pairs).
     cout << endl << "Country-Capital map after changes:"<< endl;
