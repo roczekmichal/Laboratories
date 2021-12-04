@@ -5,11 +5,6 @@
 #include <cstdlib>
 #include <chrono>
 
-/*For details see:
- https://www.cplusplus.com/reference/stl/
- https://en.cppreference.com/w/cpp/container
- */
-
 // Sequence containers
 // Sequence containers implement data structures which can be accessed sequentially.
 #include <vector>  //vector
@@ -55,39 +50,6 @@
 #include <utility>  //pair
 
 using namespace std;
-
-// Functions used in exercise 4
-template <class T>
-double measure_time(int(*func)(const T&),const  T &t)
-{
-    auto start = std::chrono::high_resolution_clock::now();
-    int w = func(t);
-    auto end = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> duration = end - start;
-    //cout << w << endl; //uncomment for debugging (value returned by func)
-    return duration.count();
-    
-}
-
-template <class T>
-double measure_time_avg3(int(*func)(const T&),const T &t)
-{
-    double c;
-    c = measure_time(func,t);
-    c += measure_time(func,t);
-    c += measure_time(func,t);
-    return c/3;
-}
-
-int vector_max(const vector<int>& v)
-{
-    int max = 0;
-    
-    // ...
-    return max;
-}
-
-// ...
 
 
 int main() {
@@ -228,52 +190,5 @@ int main() {
         cout << el.first << ":" << el.second << " ";
     }
     
-
-    //************* EX 4 *************//
-    cout << endl << endl << "************* EX 4 *************" << endl;
-    cout.precision(10);
-    cout << fixed;
-   // 4.a) Use numbers in data to create:
-    // - vector v1
-    // - priority_queue q1
-    // - set s1
-    // - unordered_set us1
-    
-    //...
-    
-    // 4.b) Measure time of finding maximum in all these structures
-    // (as in 3., complete sunctions)
-    cout <<endl << endl;
-    cout << "-------------------" << endl;
-    //cout << "Data size: " <<  n << endl;
-    cout << "Finding max"<< endl;
-    cout << "-------------------" << endl;
-    cout << "Time(s)\tStructure" << endl;
-    cout << "-------------------" << endl;
-   // cout << measure_time_avg3(vector_max, v) <<  "\tvector" << endl;
-   // cout << measure_time_avg3(p_queue_max, q) <<  "\tpriority_queue" << endl;
-   // cout << mierz_czmeasure_time_avg3as_sr3(set_max, s) <<  "\tset" << endl;
-   // cout << measure_time_avg3(unordered_set_max, us) <<  "\tunordered_set" << endl;
-    
-    cout << "-------------------" << endl;
-    
-    cout <<endl << endl;
-    // 4.c) Measure time of finding number "-1" in vector, set, unordered_set
-    
-    cout << "-------------------" << endl;
-    //cout << "Data size: " <<  n << endl;
-    cout << "Finding element"<< endl;
-    cout << "-------------------" << endl;
-    cout << "Tiome(s)\tStruscture" << endl;
-    cout << "-------------------" << endl;
- //   cout << measure_time_avg3(vector_find, v) <<  "\tvector" << endl;
- //   cout << measure_time_avg3(set_find, s) <<  "\tset" << endl;
- //   cout << measure_time_avg3(u_set_find, us) <<  "\tunordered_set" << endl;
-    cout << "-------------------" << endl;
-    
 }
 
-
-
-//szukanie max + mierz czas
-//szukanie -1 + mierz czas
