@@ -69,7 +69,6 @@ int main() {
     //  - multimap
     //  - unordered_map
     //  - unordered_multimap
-    // In case of *map containers (last four containers) use number from num array as key and its index in num array as value
      
     vector<int> v(num, num+num_size);
     set<int> s(num, num+num_size);
