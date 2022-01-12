@@ -5,46 +5,17 @@
 #include <cstdlib>
 #include <chrono>
 
-// Sequence containers
-// Sequence containers implement data structures which can be accessed sequentially.
 #include <vector>  //vector
 #include <list>    //list
 #include <array>   //array
 #include <forward_list>  //forward_list
 #include <deque> //deque
-
-// Container adaptors
-// Container adaptors provide a different interface for sequential containers
 #include <stack> //stack
 #include <queue> //queue, priority_queue
-
-// Associative containers
-// Associative containers implement sorted data structures that can be quickly searched (O(log n) complexity).
 #include <map> //map, multimap
 #include <set> //set, multiset
-// set and map:
-// - usually implemented as binary search tree
-// - ordered
-// - unique elements
-// - position depends on key
-// set: keys only (used as values)
-// map: key-value pairs
-
-
-// Unordered associative containers
-// Unordered associative containers implement unsorted (hashed) data structures that can be quickly searched (O(1) amortized, O(n) worst-case complexity).
 #include <unordered_set> //unordered_set, unordered_muiltiset
 #include <unordered_map> //unordered_map unordered_multimap
-// unordered_set and unordered_map:
-// - usually implemented as hash table
-// - unordered
-// - unique elements
-// - position depends on key
-// unordered_set: keys only (used as values)
-// unordered_map: key-value pairs
-
-
-// Other similar structures
 #include <bitset> //bitset
 #include <valarray> //valarray
 #include <utility>  //pair
